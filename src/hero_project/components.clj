@@ -3,6 +3,8 @@
             [hero-project.components.system-utils :as system-utils]
             [hero-project.components.dummy-config :as config]
             [hero-project.components.routes :as routes]
+            [hero-project.components.service :as service]
+            [hero-project.components.servlet :as servlet]
             [hero-project.service :as service-impl]))
 
 (def base-config-map {:environment :prod
@@ -14,7 +16,9 @@
 (defn base []
   (component/system-map
    :config (config/new-config base-config-map)
-   :routes (routes/new-routes #'service-impl/routes)))
+   :routes (routes/new-routes #'service-impl/routes)
+   :service (component/using (service/new-service) [:config :routes])
+   :servlet (component/using (servlet/new-servlet) [:service])))
 
 (defn local [] nil)
 
