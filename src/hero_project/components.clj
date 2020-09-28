@@ -8,10 +8,10 @@
             [hero-project.service :as service-impl]))
 
 (def base-config-map {:environment :prod
-                      :port    8080})
+                      :dev-port    8080})
 
 (def local-config-map {:environment :dev-port
-                       :port   8080})
+                       :dev-port   8080})
 
 (defn base []
   (component/system-map
@@ -20,7 +20,10 @@
    :service (component/using (service/new-service) [:config :routes])
    :servlet (component/using (servlet/new-servlet) [:service])))
 
-(defn local [] nil)
+(defn local []
+  (merge (base)
+         (component/system-map
+          :config (config/new-config local-config-map))))
 
 (def systems-map
   {:base-system base
@@ -32,3 +35,5 @@
    (system-utils/bootstrap! ((env systems-map)))))
 
 (defn stop-system! [] (system-utils/stop-components!))
+
+(stop-system!)

@@ -1,8 +1,14 @@
 (ns hero-project.service
-  (:require [ring.util.response :as ring-resp]))
+  (:require [ring.util.response :as ring-resp]
+            [io.pedestal.http :as http]
+            [io.pedestal.http.body-params :as body-params]))
 
 (defn home-page [_]
-  (ring-resp/response {:game-title "Robots vs Dinossaurs"}))
+  (ring-resp/response {:game-title "hero project"}))
+
+(def common-interceptors
+  [(body-params/body-params)
+   http/html-body])
 
 (def routes
-  #{["/" :get home-page]})
+  #{["/" :get (conj common-interceptors `home-page)]})
