@@ -14,9 +14,8 @@
                               bootstrap/start)))
   (stop [this]
     (bootstrap/stop (:instance this))
-    (dissoc this :instance)))
+    (dissoc this :instance)
+
+    Object (toString [_] "<DevServlet>")))
 
 (defn new-servlet [] (map->DevServlet {}))
-
-(defn main [start-fn & _args]
-  (start-fn {:mode :embedded}))

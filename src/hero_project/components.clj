@@ -35,5 +35,3 @@
    (system-utils/bootstrap! ((env systems-map)))))
 
 (defn stop-system! [] (system-utils/stop-components!))
-
-(stop-system!)

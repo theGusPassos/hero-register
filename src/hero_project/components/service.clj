@@ -25,10 +25,10 @@
       bootstrap/default-interceptors
       bootstrap/dev-interceptors))
 
-(defn runnable-service [config routes]
-  (let [env (:environment config)
-        port (:dev-port config)
-        service-config (base-service routes port)]
+(defn runnable-service [config routes _]
+  (let [env                (:environment config)
+        port               (:dev-port config)
+        service-config     (base-service routes port)]
     (-> (if (= :prod env)
           (prod-init service-config)
           (dev-init service-config)))))
@@ -42,6 +42,8 @@
                              (:routes routes)
                              this)))
   (stop [this]
-    (dissoc this :runnable-service)))
+    (dissoc this :runnable-service))
+
+  Object (toString [_] "<Service>"))
 
 (defn new-service [] (map->Service {}))
