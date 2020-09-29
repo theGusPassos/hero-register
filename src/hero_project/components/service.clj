@@ -25,7 +25,7 @@
       bootstrap/default-interceptors
       bootstrap/dev-interceptors))
 
-(defn runnable-service [config routes service]
+(defn runnable-service [config routes]
   (let [env (:environment config)
         port (:dev-port config)
         service-config (base-service routes port)]
