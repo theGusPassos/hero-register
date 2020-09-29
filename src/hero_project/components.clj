@@ -18,9 +18,9 @@
   (component/system-map
    :config (config/new-config base-config-map)
    :routes (routes/new-routes #'service-impl/routes)
-   :service (component/using (service/new-service) [:config :routes])
-   :servlet (component/using (servlet/new-servlet) [:service])
-   :storage (storage/new-in-memory)))
+   :storage (storage/new-in-memory)
+   :service (component/using (service/new-service) [:config :routes :storage])
+   :servlet (component/using (servlet/new-servlet) [:service])))
 
 (defn local []
   (merge (base)
@@ -37,3 +37,5 @@
    (system-utils/bootstrap! ((env systems-map)))))
 
 (defn stop-system! [] (system-utils/stop-components!))
+
+(stop-system!)

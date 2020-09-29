@@ -6,4 +6,5 @@
                      #(assoc % (:id account) account)))
 
 (defn heroes [storage]
+  (println storage)
   (storage-hero/read-all storage))

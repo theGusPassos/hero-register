@@ -9,9 +9,10 @@
     (reset! storage {})
     this)
 
-  storage-hero/StorageClient
+  storage-hero/StorageHero
   (read-all [_this] @storage)
   (put! [_this update-fn] (swap! storage update-fn))
   (clear-all! [_this] (reset! storage {})))
 
-(defn new-in-memory [])
+(defn new-in-memory []
+  (->InMemoryStorage (atom {})))
