@@ -14,3 +14,4 @@
   (components/create-and-start-system! :base-system))
 
 (run-dev)
+(-main)

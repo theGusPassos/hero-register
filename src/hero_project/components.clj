@@ -8,13 +8,14 @@
             [hero-project.components.service :as service]
             [hero-project.components.servlet :as servlet]
             [hero-project.components.storage :as storage]
-            [hero-project.service :as service-impl]))
+            [hero-project.service :as service-impl]
+            [schema.core :as s]))
 
 (def base-config-map {:environment :prod
                       :dev-port    8080})
 
 (def local-config-map {:environment :dev-port
-                       :dev-port   8081})
+                       :dev-port   8080})
 
 (defn base []
   (component/system-map
@@ -27,6 +28,7 @@
    :servlet (component/using (servlet/new-servlet) [:service])))
 
 (defn local []
+  (s/set-fn-validation! true)
   (merge (base)
          (component/system-map
           :config (config/new-config local-config-map))))
@@ -38,7 +40,11 @@
 (defn create-and-start-system!
   ([] (create-and-start-system! :base-system))
   ([env]
-   (system-utils/bootstrap! ((env systems-map)))))
+   (system-utils/bootstrap! systems-map env)))
+
+(defn ensure-system-up! [env]
+  (or (deref system-utils/system)
+      (create-and-start-system! env)))
 
 (defn stop-system! [] (system-utils/stop-components!))
 

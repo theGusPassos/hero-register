@@ -4,10 +4,11 @@
             [io.pedestal.http.body-params :as body-params]
             [hero-project.controller :as controller]))
 
-(defn home-page [_]
+(defn home-page
+  [_]
   (ring-resp/response {:game-title "hero project"}))
 
-(defn heroes [{{:keys [customer-id]} :path-params
+(defn heroes [{{:keys [customer-id]} :edn-params
                {:keys [storage]} :components}]
   (println "t2->" storage)
   (ring-resp/response
