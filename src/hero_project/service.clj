@@ -18,7 +18,8 @@
 (defn create-hero
   [{{:keys [name]} :json-params
     {:keys [storage]} :components}]
-  (ring-resp/response {:hero name}))
+  (let [hero-created (controller/create-hero! name storage)]
+    (ring-resp/response hero-created)))
 
 (def common-interceptors
   [(body-params/body-params)
