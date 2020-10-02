@@ -4,7 +4,8 @@
             [io.pedestal.http.body-params :as body-params]
             [hero-project.controller :as controller]
             [hero-project.hero-adapter :as hero-adapter]
-            [hero-project.interceptors.error-handler :as error-handler]))
+            [hero-project.interceptors.error-handler :as error-handler]
+            [clojure.data.json :as json]))
 
 (defn home-page
   [_]
@@ -12,8 +13,8 @@
 
 (defn heroes
   [{{:keys [storage]} :components}]
-  (ring-resp/response
-   (controller/heroes storage)))
+  (let [heroes (controller/heroes storage)]
+    (ring-resp/response (hero-adapter/heroes->hero-view heroes))))
 
 (defn create-hero
   [{{:keys [name]} :json-params

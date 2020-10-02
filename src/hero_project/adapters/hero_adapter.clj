@@ -7,3 +7,7 @@
 (defn hero->hero-view
   [hero]
   (assoc hero :id (str (:id hero))))
+
+(defn heroes->hero-view
+  [heroes]
+  (map hero->hero-view heroes))
