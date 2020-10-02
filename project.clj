@@ -7,7 +7,8 @@
                  [prismatic/schema "1.1.7"]
                  [com.stuartsierra/component "0.4.0"]
                  [io.pedestal/pedestal.service "0.5.3"]
-                 [io.pedestal/pedestal.jetty "0.5.3"]]
+                 [io.pedestal/pedestal.jetty "0.5.3"]
+                 [http-kit "2.3.0"]]
   :main ^:skip-aot hero-project.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all

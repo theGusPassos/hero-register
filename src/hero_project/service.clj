@@ -21,5 +21,3 @@
 (def routes
   #{["/" :get (conj common-interceptors `home-page)]
     ["/heroes/" :get (conj common-interceptors `heroes)]})
-
-(req!)

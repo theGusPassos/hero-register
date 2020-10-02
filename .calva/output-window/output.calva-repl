@@ -5,6 +5,7 @@
 ; Happy coding! ♥️
 
 ; Jacking in...
+; nREPL Connection was closed
 ; Hooking up nREPL sessions...
 ; Connected session: clj
 ; TIPS: 
@@ -16,9 +17,29 @@
 ;   - File URLs in stacktrace frames are peekable and clickable.
 clj::hero-project.core=>
 ; Jack-in done.
-; Syntax error (IllegalArgumentException) compiling at (hero_project\components.clj:41:1).
-; No implementation of method: :stop of protocol: #'com.stuartsierra.component/Lifecycle found for class: nil
-[{:file "Compiler.java" :line 7648 :method "load" :flags [:tooling :java]}
+; Syntax error compiling at (hero_project\components.clj:1:1).
+; namespace 'hero-project.components.http' not found after loading '/hero_project/components/http'
+[{:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5867" :fn "throw-if"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5909" :fn "load-one"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5903" :fn "load-one"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5948" :fn "load-lib/fn"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5947" :fn "load-lib"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5928" :fn "load-lib"  :method "doInvoke" :flags [:clj]}
+ {:file "RestFn.java" :line 142 :method "applyTo" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:667" :fn "apply"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5985" :fn "load-libs"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5969" :fn "load-libs"  :method "doInvoke" :flags [:clj]}
+ {:file "RestFn.java" :line 137 :method "applyTo" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:667" :fn "apply"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:6007" :fn "require"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:6007" :fn "require"  :method "doInvoke" :flags [:dup :clj]}
+ {:file "RestFn.java" :line 805 :method "invoke" :flags [:java]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/components.clj:1" :fn "eval13656/loading--auto--"  :method "invoke" :flags [:project :clj]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/components.clj:1" :fn "eval13656"  :method "invokeStatic" :flags [:dup :project :clj]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/components.clj:1" :fn "eval13656"  :method "invoke" :flags [:dup :project :clj]}
+ {:file "Compiler.java" :line 7177 :method "eval" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7166 :method "eval" :flags [:dup :tooling :java]}
+ {:file "Compiler.java" :line 7636 :method "load" :flags [:tooling :java]}
  {:file "RT.java" :line 381 :method "loadResourceScript" :flags [:java]}
  {:file "RT.java" :line 372 :method "loadResourceScript" :flags [:dup :java]}
  {:file "RT.java" :line 459 :method "load" :flags [:java]}
@@ -41,9 +62,9 @@ clj::hero-project.core=>
  {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:6007" :fn "require"  :method "invokeStatic" :flags [:clj]}
  {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:6007" :fn "require"  :method "doInvoke" :flags [:dup :clj]}
  {:file "RestFn.java" :line 408 :method "invoke" :flags [:java]}
- {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/server.clj:1" :fn "eval13648/loading--auto--"  :method "invoke" :flags [:project :repl :clj]}
- {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/server.clj:1" :fn "eval13648"  :method "invokeStatic" :flags [:dup :project :repl :clj]}
- {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/server.clj:1" :fn "eval13648"  :method "invoke" :flags [:dup :project :repl :clj]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/server.clj:1" :fn "eval13650/loading--auto--"  :method "invoke" :flags [:project :repl :clj]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/server.clj:1" :fn "eval13650"  :method "invokeStatic" :flags [:dup :project :repl :clj]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/server.clj:1" :fn "eval13650"  :method "invoke" :flags [:dup :project :repl :clj]}
  {:file "Compiler.java" :line 7177 :method "eval" :flags [:tooling :java]}
  {:file "Compiler.java" :line 7166 :method "eval" :flags [:dup :tooling :java]}
  {:file "Compiler.java" :line 7132 :method "eval" :flags [:dup :tooling :java]}
@@ -65,10 +86,68 @@ clj::hero-project.core=>
  {:file "AFn.java" :line 22 :method "run" :flags [:java]}
  {:file "" :line -1 :method "run" :flags [:unknown]}]
 clj::hero-project.server=>
-; Syntax error compiling at (c:\Users\Gustavo\Documents\_me\programming\clojure\hero-project\src\hero_project\server.clj:1:1).
-; namespace 'hero-project.components' not found
+nil
+clj::basic-microservice-example.components.http=>
+#'basic-microservice-example.components.http/render-body
+clj::basic-microservice-example.components.http=>
+#'basic-microservice-example.components.http/render-req
+clj::basic-microservice-example.components.http=>
+#'basic-microservice-example.components.http/request-sync!
+clj::basic-microservice-example.components.http=>
+#'basic-microservice-example.components.http/parse-body
+clj::basic-microservice-example.components.http=>
+#'basic-microservice-example.components.http/handle-response
+clj::basic-microservice-example.components.http=>
+#'basic-microservice-example.components.http/do-req-resp!
+clj::basic-microservice-example.components.http=>
+; Syntax error compiling at (c:\Users\Gustavo\Documents\_me\programming\clojure\hero-project\src\hero_project\components\http.clj:57:3).
+; Unable to resolve symbol: req! in this context
+[{:file "Compiler.java" :line 6808 :method "analyze" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6745 :method "analyze" :flags [:dup :tooling :java]}
+ {:file "Compiler.java" :line 3820 :method "parse" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7109 :method "analyzeSeq" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6789 :method "analyze" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6745 :method "analyze" :flags [:dup :tooling :java]}
+ {:file "Compiler.java" :line 6120 :method "parse" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 5467 :method "parse" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 4029 :method "parse" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7105 :method "analyzeSeq" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6789 :method "analyze" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7174 :method "eval" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7132 :method "eval" :flags [:dup :tooling :java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:3214" :fn "eval"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:3210" :fn "eval"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:91" :fn "evaluate/fn"  :method "invoke" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:437" :fn "repl/read-eval-print/fn"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:437" :fn "repl/read-eval-print"  :method "invoke" :flags [:dup :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:458" :fn "repl/fn"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:458" :fn "repl"  :method "invokeStatic" :flags [:dup :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:368" :fn "repl"  :method "doInvoke" :flags [:clj]}
+ {:file "RestFn.java" :line 1523 :method "invoke" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:84" :fn "evaluate"  :method "invokeStatic" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:56" :fn "evaluate"  :method "invoke" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:155" :fn "interruptible-eval/fn/fn"  :method "invoke" :flags [:tooling :clj]}
+ {:file "AFn.java" :line 22 :method "run" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/session.clj:190" :fn "session-exec/main-loop/fn"  :method "invoke" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/session.clj:189" :fn "session-exec/main-loop"  :method "invoke" :flags [:tooling :clj]}
+ {:file "AFn.java" :line 22 :method "run" :flags [:java]}
+ {:file "" :line -1 :method "run" :flags [:unknown]}]
+clj::basic-microservice-example.components.http=>
+basic_microservice_example.components.http.Http
+clj::basic-microservice-example.components.http=>
+#'basic-microservice-example.components.http/default-headers
+clj::basic-microservice-example.components.http=>
+#'basic-microservice-example.components.http/json-defaults
+clj::basic-microservice-example.components.http=>
+#'basic-microservice-example.components.http/new-http
+clj::basic-microservice-example.components.http=>
+; Syntax error compiling at (c:\Users\Gustavo\Documents\_me\programming\clojure\hero-project\src\hero_project\components.clj:1:1).
+; namespace 'hero-project.components.http' not found after loading '/hero_project/components/http'
 [{:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5867" :fn "throw-if"  :method "invokeStatic" :flags [:clj]}
- {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5953" :fn "load-lib"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5909" :fn "load-one"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5903" :fn "load-one"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5948" :fn "load-lib/fn"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5947" :fn "load-lib"  :method "invokeStatic" :flags [:clj]}
  {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5928" :fn "load-lib"  :method "doInvoke" :flags [:clj]}
  {:file "RestFn.java" :line 142 :method "applyTo" :flags [:java]}
  {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:667" :fn "apply"  :method "invokeStatic" :flags [:clj]}
@@ -78,12 +157,101 @@ clj::hero-project.server=>
  {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:667" :fn "apply"  :method "invokeStatic" :flags [:clj]}
  {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:6007" :fn "require"  :method "invokeStatic" :flags [:clj]}
  {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:6007" :fn "require"  :method "doInvoke" :flags [:dup :clj]}
- {:file "RestFn.java" :line 408 :method "invoke" :flags [:java]}
- {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/server.clj:1" :fn "eval30215/loading--auto--"  :method "invoke" :flags [:project :repl :clj]}
- {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/server.clj:1" :fn "eval30215"  :method "invokeStatic" :flags [:dup :project :repl :clj]}
- {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/server.clj:1" :fn "eval30215"  :method "invoke" :flags [:dup :project :repl :clj]}
+ {:file "RestFn.java" :line 805 :method "invoke" :flags [:java]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/components.clj:1" :fn "eval17391/loading--auto--"  :method "invoke" :flags [:project :repl :clj]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/components.clj:1" :fn "eval17391"  :method "invokeStatic" :flags [:dup :project :repl :clj]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/components.clj:1" :fn "eval17391"  :method "invoke" :flags [:dup :project :repl :clj]}
  {:file "Compiler.java" :line 7177 :method "eval" :flags [:tooling :java]}
  {:file "Compiler.java" :line 7166 :method "eval" :flags [:dup :tooling :java]}
+ {:file "Compiler.java" :line 7132 :method "eval" :flags [:dup :tooling :java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:3214" :fn "eval"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:3210" :fn "eval"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:91" :fn "evaluate/fn"  :method "invoke" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:437" :fn "repl/read-eval-print/fn"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:437" :fn "repl/read-eval-print"  :method "invoke" :flags [:dup :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:458" :fn "repl/fn"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:458" :fn "repl"  :method "invokeStatic" :flags [:dup :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:368" :fn "repl"  :method "doInvoke" :flags [:clj]}
+ {:file "RestFn.java" :line 1523 :method "invoke" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:84" :fn "evaluate"  :method "invokeStatic" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:56" :fn "evaluate"  :method "invoke" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:155" :fn "interruptible-eval/fn/fn"  :method "invoke" :flags [:tooling :clj]}
+ {:file "AFn.java" :line 22 :method "run" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/session.clj:190" :fn "session-exec/main-loop/fn"  :method "invoke" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/session.clj:189" :fn "session-exec/main-loop"  :method "invoke" :flags [:tooling :clj]}
+ {:file "AFn.java" :line 22 :method "run" :flags [:java]}
+ {:file "" :line -1 :method "run" :flags [:unknown]}]
+clj::hero-project.components=>
+nil
+clj::basic-microservice-example.components.http=>
+; Syntax error compiling at (c:\Users\Gustavo\Documents\_me\programming\clojure\hero-project\src\hero_project\components.clj:1:1).
+; namespace 'hero-project.components.http' not found after loading '/hero_project/components/http'
+[{:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5867" :fn "throw-if"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5909" :fn "load-one"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5903" :fn "load-one"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5948" :fn "load-lib/fn"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5947" :fn "load-lib"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5928" :fn "load-lib"  :method "doInvoke" :flags [:clj]}
+ {:file "RestFn.java" :line 142 :method "applyTo" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:667" :fn "apply"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5985" :fn "load-libs"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:5969" :fn "load-libs"  :method "doInvoke" :flags [:clj]}
+ {:file "RestFn.java" :line 137 :method "applyTo" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:667" :fn "apply"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:6007" :fn "require"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:6007" :fn "require"  :method "doInvoke" :flags [:dup :clj]}
+ {:file "RestFn.java" :line 805 :method "invoke" :flags [:java]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/components.clj:1" :fn "eval17644/loading--auto--"  :method "invoke" :flags [:project :repl :clj]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/components.clj:1" :fn "eval17644"  :method "invokeStatic" :flags [:dup :project :repl :clj]}
+ {:file "file:/C:/Users/Gustavo/Documents/_me/programming/clojure/hero-project/src/hero_project/components.clj:1" :fn "eval17644"  :method "invoke" :flags [:dup :project :repl :clj]}
+ {:file "Compiler.java" :line 7177 :method "eval" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7166 :method "eval" :flags [:dup :tooling :java]}
+ {:file "Compiler.java" :line 7132 :method "eval" :flags [:dup :tooling :java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:3214" :fn "eval"  :method "invokeStatic" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:3210" :fn "eval"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:91" :fn "evaluate/fn"  :method "invoke" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:437" :fn "repl/read-eval-print/fn"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:437" :fn "repl/read-eval-print"  :method "invoke" :flags [:dup :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:458" :fn "repl/fn"  :method "invoke" :flags [:clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:458" :fn "repl"  :method "invokeStatic" :flags [:dup :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/main.clj:368" :fn "repl"  :method "doInvoke" :flags [:clj]}
+ {:file "RestFn.java" :line 1523 :method "invoke" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:84" :fn "evaluate"  :method "invokeStatic" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:56" :fn "evaluate"  :method "invoke" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/interruptible_eval.clj:155" :fn "interruptible-eval/fn/fn"  :method "invoke" :flags [:tooling :clj]}
+ {:file "AFn.java" :line 22 :method "run" :flags [:java]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/session.clj:190" :fn "session-exec/main-loop/fn"  :method "invoke" :flags [:tooling :clj]}
+ {:file "jar:file:/C:/Users/Gustavo/.m2/repository/nrepl/nrepl/0.7.0/nrepl-0.7.0.jar!/nrepl/middleware/session.clj:189" :fn "session-exec/main-loop"  :method "invoke" :flags [:tooling :clj]}
+ {:file "AFn.java" :line 22 :method "run" :flags [:java]}
+ {:file "" :line -1 :method "run" :flags [:unknown]}]
+clj::hero-project.components=>
+nil
+clj::hero-project.components=>
+nil
+clj::hero-project.components=>
+nil
+clj::hero-project.server=>
+; Syntax error compiling at (c:\Users\Gustavo\Documents\_me\programming\clojure\hero-project\src\hero_project\server.clj:9:3).
+; No such var: components/create-and-start-system!
+[{:file "Compiler.java" :line 6808 :method "analyze" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6745 :method "analyze" :flags [:dup :tooling :java]}
+ {:file "Compiler.java" :line 3820 :method "parse" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7109 :method "analyzeSeq" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6789 :method "analyze" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6745 :method "analyze" :flags [:dup :tooling :java]}
+ {:file "Compiler.java" :line 6120 :method "parse" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 5467 :method "parse" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 4029 :method "parse" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7105 :method "analyzeSeq" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6789 :method "analyze" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7095 :method "analyzeSeq" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6789 :method "analyze" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 38 :method "access$300" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 596 :method "parse" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 7107 :method "analyzeSeq" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6789 :method "analyze" :flags [:tooling :java]}
+ {:file "Compiler.java" :line 6745 :method "analyze" :flags [:dup :tooling :java]}
+ {:file "Compiler.java" :line 7181 :method "eval" :flags [:tooling :java]}
  {:file "Compiler.java" :line 7132 :method "eval" :flags [:dup :tooling :java]}
  {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:3214" :fn "eval"  :method "invokeStatic" :flags [:clj]}
  {:file "jar:file:/C:/Users/Gustavo/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar!/clojure/core.clj:3210" :fn "eval"  :method "invoke" :flags [:clj]}
@@ -119,19 +287,44 @@ clj::hero-project.components=>
 clj::hero-project.components=>
 #'hero-project.components/stop-system!
 clj::hero-project.components=>
-nil
-clj::hero-project.server=>
 #'hero-project.server/run-dev
 clj::hero-project.server=>
 
 Creating your [DEV] server...
 {:config {:config {:environment :dev-port, :dev-port 8081}},
- :storage {:storage #<Atom@41e3a254: {}>},
+ :http-impl {:config {:config {:environment :dev-port, :dev-port 8081}}},
+ :http
+ {:defaults
+  {:serialize #function[hero-project.http.serialization/write-json],
+   :follow-redirects false,
+   :user-agent "http-kit / your org",
+   :method :get,
+   :as :text,
+   :headers {"Content-Type" "application/json; charset=utf-8", "Accept-Encoding" "gzip, deflate"},
+   :keepalive 120000,
+   :deserialize #function[hero-project.http.serialization/read-json],
+   :timeout 30000},
+  :http-impl {:config {:config {:environment :dev-port, :dev-port 8081}}},
+  :config {:config {:environment :dev-port, :dev-port 8081}}},
+ :storage {:storage #<Atom@180fa865: {}>},
  :routes {:routes #'hero-project.service/routes},
  :service
  {:config {:config {:environment :dev-port, :dev-port 8081}},
   :routes {:routes #'hero-project.service/routes},
-  :storage {:storage #<Atom@41e3a254: {}>},
+  :http
+  {:defaults
+   {:serialize #function[hero-project.http.serialization/write-json],
+    :follow-redirects false,
+    :user-agent "http-kit / your org",
+    :method :get,
+    :as :text,
+    :headers {"Content-Type" "application/json; charset=utf-8", "Accept-Encoding" "gzip, deflate"},
+    :keepalive 120000,
+    :deserialize #function[hero-project.http.serialization/read-json],
+    :timeout 30000},
+   :http-impl {:config {:config {:environment :dev-port, :dev-port 8081}}},
+   :config {:config {:environment :dev-port, :dev-port 8081}}},
+  :storage {:storage #<Atom@180fa865: {}>},
   :runnable-service
   {:io.pedestal.http/port 8081,
    :io.pedestal.http/secure-headers {:content-security-policy-settings {:object-src "none"}},
@@ -145,53 +338,66 @@ Creating your [DEV] server...
      :leave nil,
      :error #function[io.pedestal.http.impl.servlet-interceptor/error-debug]}
     {:name :io.pedestal.http.cors/dev-allow-origin,
-     :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
+     :enter #function[io.pedestal.interceptor.helpers/before/fn--28585],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http/log-request,
-     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--24120],
+     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--28641],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http.cors/allow-origin,
-     :enter #function[io.pedestal.http.cors/allow-origin/fn--28025],
-     :leave #function[io.pedestal.http.cors/allow-origin/fn--28037],
+     :enter #function[io.pedestal.http.cors/allow-origin/fn--32546],
+     :leave #function[io.pedestal.http.cors/allow-origin/fn--32558],
      :error nil}
     {:name :io.pedestal.http/not-found,
      :enter nil,
-     :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
+     :leave #function[io.pedestal.interceptor.helpers/after/fn--28605],
      :error nil}
     {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
      :enter nil,
-     :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
+     :leave #function[io.pedestal.interceptor.helpers/after/fn--28605],
      :error nil}
     {:name :io.pedestal.http.route/query-params,
-     :enter #function[io.pedestal.http.route/fn--24973],
+     :enter #function[io.pedestal.http.route/fn--29494],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http.route/method-param,
-     :enter #function[io.pedestal.http.route/method-param/fn--24976],
+     :enter #function[io.pedestal.http.route/method-param/fn--29497],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http.secure-headers/secure-headers,
      :enter nil,
-     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--27046],
+     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--31567],
      :error nil}
     {:name :io.pedestal.http.ring-middlewares/resource,
-     :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
+     :enter #function[io.pedestal.interceptor.helpers/before/fn--28585],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http.route/router,
-     :enter #function[io.pedestal.http.route/eval24965/fn--24966/fn--24967],
+     :enter #function[io.pedestal.http.route/eval29486/fn--29487/fn--29488],
      :leave nil,
      :error nil}],
-   :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--28138],
+   :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--32659],
    :io.pedestal.http/router :prefix-tree,
    :io.pedestal.http/join? false}},
  :servlet
  {:service
   {:config {:config {:environment :dev-port, :dev-port 8081}},
    :routes {:routes #'hero-project.service/routes},
-   :storage {:storage #<Atom@41e3a254: {}>},
+   :http
+   {:defaults
+    {:serialize #function[hero-project.http.serialization/write-json],
+     :follow-redirects false,
+     :user-agent "http-kit / your org",
+     :method :get,
+     :as :text,
+     :headers {"Content-Type" "application/json; charset=utf-8", "Accept-Encoding" "gzip, deflate"},
+     :keepalive 120000,
+     :deserialize #function[hero-project.http.serialization/read-json],
+     :timeout 30000},
+    :http-impl {:config {:config {:environment :dev-port, :dev-port 8081}}},
+    :config {:config {:environment :dev-port, :dev-port 8081}}},
+   :storage {:storage #<Atom@180fa865: {}>},
    :runnable-service
    {:io.pedestal.http/port 8081,
     :io.pedestal.http/secure-headers {:content-security-policy-settings {:object-src "none"}},
@@ -205,54 +411,54 @@ Creating your [DEV] server...
       :leave nil,
       :error #function[io.pedestal.http.impl.servlet-interceptor/error-debug]}
      {:name :io.pedestal.http.cors/dev-allow-origin,
-      :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
+      :enter #function[io.pedestal.interceptor.helpers/before/fn--28585],
       :leave nil,
       :error nil}
      {:name :io.pedestal.http/log-request,
-      :enter #function[io.pedestal.interceptor.helpers/on-request/fn--24120],
+      :enter #function[io.pedestal.interceptor.helpers/on-request/fn--28641],
       :leave nil,
       :error nil}
      {:name :io.pedestal.http.cors/allow-origin,
-      :enter #function[io.pedestal.http.cors/allow-origin/fn--28025],
-      :leave #function[io.pedestal.http.cors/allow-origin/fn--28037],
+      :enter #function[io.pedestal.http.cors/allow-origin/fn--32546],
+      :leave #function[io.pedestal.http.cors/allow-origin/fn--32558],
       :error nil}
      {:name :io.pedestal.http/not-found,
       :enter nil,
-      :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
+      :leave #function[io.pedestal.interceptor.helpers/after/fn--28605],
       :error nil}
      {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
       :enter nil,
-      :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
+      :leave #function[io.pedestal.interceptor.helpers/after/fn--28605],
       :error nil}
      {:name :io.pedestal.http.route/query-params,
-      :enter #function[io.pedestal.http.route/fn--24973],
+      :enter #function[io.pedestal.http.route/fn--29494],
       :leave nil,
       :error nil}
      {:name :io.pedestal.http.route/method-param,
-      :enter #function[io.pedestal.http.route/method-param/fn--24976],
+      :enter #function[io.pedestal.http.route/method-param/fn--29497],
       :leave nil,
       :error nil}
      {:name :io.pedestal.http.secure-headers/secure-headers,
       :enter nil,
-      :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--27046],
+      :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--31567],
       :error nil}
      {:name :io.pedestal.http.ring-middlewares/resource,
-      :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
+      :enter #function[io.pedestal.interceptor.helpers/before/fn--28585],
       :leave nil,
       :error nil}
      {:name :io.pedestal.http.route/router,
-      :enter #function[io.pedestal.http.route/eval24965/fn--24966/fn--24967],
+      :enter #function[io.pedestal.http.route/eval29486/fn--29487/fn--29488],
       :leave nil,
       :error nil}],
-    :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--28138],
+    :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--32659],
     :io.pedestal.http/router :prefix-tree,
     :io.pedestal.http/join? false}},
   :instance
   {:io.pedestal.http/port 8081,
-   :io.pedestal.http/service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--27975],
+   :io.pedestal.http/service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--32496],
    :io.pedestal.http/secure-headers {:content-security-policy-settings {:object-src "none"}},
    :io.pedestal.http/type :jetty,
-   :io.pedestal.http/start-fn #function[io.pedestal.http.jetty/server/fn--30631],
+   :io.pedestal.http/start-fn #function[io.pedestal.http.jetty/server/fn--33489],
    :env :dev-port,
    :io.pedestal.http/allowed-origins {:creds true, :allowed-origins #function[clojure.core/constantly/fn--5672]},
    :io.pedestal.http/resource-path "/public",
@@ -262,326 +468,51 @@ Creating your [DEV] server...
      :leave nil,
      :error #function[io.pedestal.http.impl.servlet-interceptor/error-debug]}
     {:name :io.pedestal.http.cors/dev-allow-origin,
-     :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
+     :enter #function[io.pedestal.interceptor.helpers/before/fn--28585],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http/log-request,
-     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--24120],
+     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--28641],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http.cors/allow-origin,
-     :enter #function[io.pedestal.http.cors/allow-origin/fn--28025],
-     :leave #function[io.pedestal.http.cors/allow-origin/fn--28037],
+     :enter #function[io.pedestal.http.cors/allow-origin/fn--32546],
+     :leave #function[io.pedestal.http.cors/allow-origin/fn--32558],
      :error nil}
     {:name :io.pedestal.http/not-found,
      :enter nil,
-     :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
+     :leave #function[io.pedestal.interceptor.helpers/after/fn--28605],
      :error nil}
     {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
      :enter nil,
-     :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
+     :leave #function[io.pedestal.interceptor.helpers/after/fn--28605],
      :error nil}
     {:name :io.pedestal.http.route/query-params,
-     :enter #function[io.pedestal.http.route/fn--24973],
+     :enter #function[io.pedestal.http.route/fn--29494],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http.route/method-param,
-     :enter #function[io.pedestal.http.route/method-param/fn--24976],
+     :enter #function[io.pedestal.http.route/method-param/fn--29497],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http.secure-headers/secure-headers,
      :enter nil,
-     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--27046],
+     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--31567],
      :error nil}
     {:name :io.pedestal.http.ring-middlewares/resource,
-     :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
+     :enter #function[io.pedestal.interceptor.helpers/before/fn--28585],
      :leave nil,
      :error nil}
     {:name :io.pedestal.http.route/router,
-     :enter #function[io.pedestal.http.route/eval24965/fn--24966/fn--24967],
+     :enter #function[io.pedestal.http.route/eval29486/fn--29487/fn--29488],
      :leave nil,
      :error nil}],
-   :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--28138],
+   :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--32659],
    :io.pedestal.http/router :prefix-tree,
    :io.pedestal.http/servlet
-   #object[io.pedestal.http.servlet.FnServlet 0x33e5affe "io.pedestal.http.servlet.FnServlet@33e5affe"],
+   #object[io.pedestal.http.servlet.FnServlet 0x75bdfcb0 "io.pedestal.http.servlet.FnServlet@75bdfcb0"],
    :io.pedestal.http/server
-   #object[org.eclipse.jetty.server.Server 0x377baabe "org.eclipse.jetty.server.Server@377baabe"],
+   #object[org.eclipse.jetty.server.Server 0x3c0e6487 "org.eclipse.jetty.server.Server@3c0e6487"],
    :io.pedestal.http/join? false,
-   :io.pedestal.http/stop-fn #function[io.pedestal.http.jetty/server/fn--30633]}}}
+   :io.pedestal.http/stop-fn #function[io.pedestal.http.jetty/server/fn--33491]}}}
 clj::hero-project.server=> 
-#'hero-project.service/heroes
-clj::hero-project.service=> 
-hero_project.components.servlet.Servlet
-clj::hero-project.components.servlet=> 
-#'hero-project.components.servlet/new-servlet
-clj::hero-project.components.servlet=> 
-nil
-clj::hero-project.components.servlet=> 
-hero_project.components.servlet.Servlet
-clj::hero-project.components.servlet=> 
-#'hero-project.components.servlet/new-servlet
-clj::hero-project.components.servlet=> 
-#function[hero-project.components/stop-system!]
-clj::hero-project.components=> 
-{:config {:config {:environment :dev-port, :dev-port 8081}},
- :storage {:storage #<Atom@41e3a254: {}>},
- :routes {},
- :service
- {:config {:config {:environment :dev-port, :dev-port 8081}},
-  :routes {:routes #'hero-project.service/routes},
-  :storage {:storage #<Atom@41e3a254: {}>}},
- :servlet
- {:service
-  {:config {:config {:environment :dev-port, :dev-port 8081}},
-   :routes {:routes #'hero-project.service/routes},
-   :storage {:storage #<Atom@41e3a254: {}>},
-   :runnable-service
-   {:io.pedestal.http/port 8081,
-    :io.pedestal.http/secure-headers {:content-security-policy-settings {:object-src "none"}},
-    :io.pedestal.http/type :jetty,
-    :env :dev-port,
-    :io.pedestal.http/allowed-origins {:creds true, :allowed-origins #function[clojure.core/constantly/fn--5672]},
-    :io.pedestal.http/resource-path "/public",
-    :io.pedestal.http/interceptors
-    [{:name :io.pedestal.http.impl.servlet-interceptor/exception-debug,
-      :enter nil,
-      :leave nil,
-      :error #function[io.pedestal.http.impl.servlet-interceptor/error-debug]}
-     {:name :io.pedestal.http.cors/dev-allow-origin,
-      :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http/log-request,
-      :enter #function[io.pedestal.interceptor.helpers/on-request/fn--24120],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http.cors/allow-origin,
-      :enter #function[io.pedestal.http.cors/allow-origin/fn--28025],
-      :leave #function[io.pedestal.http.cors/allow-origin/fn--28037],
-      :error nil}
-     {:name :io.pedestal.http/not-found,
-      :enter nil,
-      :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
-      :error nil}
-     {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
-      :enter nil,
-      :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
-      :error nil}
-     {:name :io.pedestal.http.route/query-params,
-      :enter #function[io.pedestal.http.route/fn--24973],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http.route/method-param,
-      :enter #function[io.pedestal.http.route/method-param/fn--24976],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http.secure-headers/secure-headers,
-      :enter nil,
-      :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--27046],
-      :error nil}
-     {:name :io.pedestal.http.ring-middlewares/resource,
-      :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http.route/router,
-      :enter #function[io.pedestal.http.route/eval24965/fn--24966/fn--24967],
-      :leave nil,
-      :error nil}],
-    :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--28138],
-    :io.pedestal.http/router :prefix-tree,
-    :io.pedestal.http/join? false}}}}
-clj::hero-project.components=> 
-
-Creating your [DEV] server...
-{:config {:config {:environment :dev-port, :dev-port 8081}},
- :storage {:storage #<Atom@1a521e3e: {}>},
- :routes {:routes #'hero-project.service/routes},
- :service
- {:config {:config {:environment :dev-port, :dev-port 8081}},
-  :routes {:routes #'hero-project.service/routes},
-  :storage {:storage #<Atom@1a521e3e: {}>},
-  :runnable-service
-  {:io.pedestal.http/port 8081,
-   :io.pedestal.http/secure-headers {:content-security-policy-settings {:object-src "none"}},
-   :io.pedestal.http/type :jetty,
-   :env :dev-port,
-   :io.pedestal.http/allowed-origins {:creds true, :allowed-origins #function[clojure.core/constantly/fn--5672]},
-   :io.pedestal.http/resource-path "/public",
-   :io.pedestal.http/interceptors
-   [{:name :io.pedestal.http.impl.servlet-interceptor/exception-debug,
-     :enter nil,
-     :leave nil,
-     :error #function[io.pedestal.http.impl.servlet-interceptor/error-debug]}
-    {:name :io.pedestal.http.cors/dev-allow-origin,
-     :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http/log-request,
-     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--24120],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http.cors/allow-origin,
-     :enter #function[io.pedestal.http.cors/allow-origin/fn--28025],
-     :leave #function[io.pedestal.http.cors/allow-origin/fn--28037],
-     :error nil}
-    {:name :io.pedestal.http/not-found,
-     :enter nil,
-     :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
-     :error nil}
-    {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
-     :enter nil,
-     :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
-     :error nil}
-    {:name :io.pedestal.http.route/query-params,
-     :enter #function[io.pedestal.http.route/fn--24973],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http.route/method-param,
-     :enter #function[io.pedestal.http.route/method-param/fn--24976],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http.secure-headers/secure-headers,
-     :enter nil,
-     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--27046],
-     :error nil}
-    {:name :io.pedestal.http.ring-middlewares/resource,
-     :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http.route/router,
-     :enter #function[io.pedestal.http.route/eval24965/fn--24966/fn--24967],
-     :leave nil,
-     :error nil}],
-   :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--28138],
-   :io.pedestal.http/router :prefix-tree,
-   :io.pedestal.http/join? false}},
- :servlet
- {:service
-  {:config {:config {:environment :dev-port, :dev-port 8081}},
-   :routes {:routes #'hero-project.service/routes},
-   :storage {:storage #<Atom@1a521e3e: {}>},
-   :runnable-service
-   {:io.pedestal.http/port 8081,
-    :io.pedestal.http/secure-headers {:content-security-policy-settings {:object-src "none"}},
-    :io.pedestal.http/type :jetty,
-    :env :dev-port,
-    :io.pedestal.http/allowed-origins {:creds true, :allowed-origins #function[clojure.core/constantly/fn--5672]},
-    :io.pedestal.http/resource-path "/public",
-    :io.pedestal.http/interceptors
-    [{:name :io.pedestal.http.impl.servlet-interceptor/exception-debug,
-      :enter nil,
-      :leave nil,
-      :error #function[io.pedestal.http.impl.servlet-interceptor/error-debug]}
-     {:name :io.pedestal.http.cors/dev-allow-origin,
-      :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http/log-request,
-      :enter #function[io.pedestal.interceptor.helpers/on-request/fn--24120],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http.cors/allow-origin,
-      :enter #function[io.pedestal.http.cors/allow-origin/fn--28025],
-      :leave #function[io.pedestal.http.cors/allow-origin/fn--28037],
-      :error nil}
-     {:name :io.pedestal.http/not-found,
-      :enter nil,
-      :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
-      :error nil}
-     {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
-      :enter nil,
-      :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
-      :error nil}
-     {:name :io.pedestal.http.route/query-params,
-      :enter #function[io.pedestal.http.route/fn--24973],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http.route/method-param,
-      :enter #function[io.pedestal.http.route/method-param/fn--24976],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http.secure-headers/secure-headers,
-      :enter nil,
-      :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--27046],
-      :error nil}
-     {:name :io.pedestal.http.ring-middlewares/resource,
-      :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
-      :leave nil,
-      :error nil}
-     {:name :io.pedestal.http.route/router,
-      :enter #function[io.pedestal.http.route/eval24965/fn--24966/fn--24967],
-      :leave nil,
-      :error nil}],
-    :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--28138],
-    :io.pedestal.http/router :prefix-tree,
-    :io.pedestal.http/join? false}},
-  :instance
-  {:io.pedestal.http/port 8081,
-   :io.pedestal.http/service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--27975],
-   :io.pedestal.http/secure-headers {:content-security-policy-settings {:object-src "none"}},
-   :io.pedestal.http/type :jetty,
-   :io.pedestal.http/start-fn #function[io.pedestal.http.jetty/server/fn--30631],
-   :env :dev-port,
-   :io.pedestal.http/allowed-origins {:creds true, :allowed-origins #function[clojure.core/constantly/fn--5672]},
-   :io.pedestal.http/resource-path "/public",
-   :io.pedestal.http/interceptors
-   [{:name :io.pedestal.http.impl.servlet-interceptor/exception-debug,
-     :enter nil,
-     :leave nil,
-     :error #function[io.pedestal.http.impl.servlet-interceptor/error-debug]}
-    {:name :io.pedestal.http.cors/dev-allow-origin,
-     :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http/log-request,
-     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--24120],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http.cors/allow-origin,
-     :enter #function[io.pedestal.http.cors/allow-origin/fn--28025],
-     :leave #function[io.pedestal.http.cors/allow-origin/fn--28037],
-     :error nil}
-    {:name :io.pedestal.http/not-found,
-     :enter nil,
-     :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
-     :error nil}
-    {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
-     :enter nil,
-     :leave #function[io.pedestal.interceptor.helpers/after/fn--24084],
-     :error nil}
-    {:name :io.pedestal.http.route/query-params,
-     :enter #function[io.pedestal.http.route/fn--24973],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http.route/method-param,
-     :enter #function[io.pedestal.http.route/method-param/fn--24976],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http.secure-headers/secure-headers,
-     :enter nil,
-     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--27046],
-     :error nil}
-    {:name :io.pedestal.http.ring-middlewares/resource,
-     :enter #function[io.pedestal.interceptor.helpers/before/fn--24064],
-     :leave nil,
-     :error nil}
-    {:name :io.pedestal.http.route/router,
-     :enter #function[io.pedestal.http.route/eval24965/fn--24966/fn--24967],
-     :leave nil,
-     :error nil}],
-   :io.pedestal.http/routes #function[hero-project.components.service/base-service/fn--28138],
-   :io.pedestal.http/router :prefix-tree,
-   :io.pedestal.http/servlet
-   #object[io.pedestal.http.servlet.FnServlet 0x1aa809d3 "io.pedestal.http.servlet.FnServlet@1aa809d3"],
-   :io.pedestal.http/server
-   #object[org.eclipse.jetty.server.Server 0x2b3fa5f5 "org.eclipse.jetty.server.Server@2b3fa5f5"],
-   :io.pedestal.http/join? false,
-   :io.pedestal.http/stop-fn #function[io.pedestal.http.jetty/server/fn--30633]}}}
-clj::hero-project.server=> 
-#'hero-project.service/heroes
-clj::hero-project.service=> 
-#'hero-project.service/heroes
-clj::hero-project.service=> 
-#'hero-project.service/heroes
-clj::hero-project.service=> 
