@@ -1,4 +1,4 @@
-(ns hero-adapter
+(ns hero-project.hero-adapter
   (:require [schema.core :as s :include-macros true]))
 
 (def HeroCreation

@@ -3,7 +3,8 @@
             [io.pedestal.http :as http]
             [io.pedestal.http.body-params :as body-params]
             [hero-project.controller :as controller]
-            [hero-project.adapters :as hero-adapter]))
+            [hero-project.hero-adapter :as hero-adapter]
+            [hero-project.interceptors.error-handler :as error-handler]))
 
 (defn home-page
   [_]
@@ -15,15 +16,15 @@
    (controller/heroes storage)))
 
 (defn create-hero
-  [{{:keys [params]} :path-params
-    {:keys [storage]} :components}]
+  [{:keys [params]}]
   (println params)
   (hero-adapter/to-hero params)
   (ring-resp/response {:hero 1}))
 
 (def common-interceptors
   [(body-params/body-params)
-   http/html-body])
+   http/html-body
+   error-handler/service-error-handler])
 
 (def routes
   #{["/" :get (conj common-interceptors `home-page)]
