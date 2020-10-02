@@ -3,8 +3,6 @@
             [hero-project.components.system-utils :as system-utils]
             [hero-project.components.dummy-config :as config]
             [hero-project.components.routes :as routes]
-            [hero-project.components.http-kit :as http-kit]
-            [hero-project.components.http :as http]
             [hero-project.components.service :as service]
             [hero-project.components.servlet :as servlet]
             [hero-project.components.storage :as storage]
@@ -38,7 +36,7 @@
 (defn create-and-start-system!
   ([] (create-and-start-system! :base-system))
   ([env]
-   (system-utils/bootstrap! systems-map env)))
+   (system-utils/bootstrap! ((env systems-map)))))
 
 (defn ensure-system-up! [env]
   (or (deref system-utils/system)

@@ -13,16 +13,6 @@
 (defn start-system! []
   (swap! system quiet-start))
 
-(defn get-component [component-name]
-  (some-> system deref (get component-name)))
-
-(defn get-component! [c]
-  (or (get-component c)
-      (throw (ex-info "Component not found"
-                      {:from      ::get-component!
-                       :component c
-                       :reason    "Unknown component"}))))
-
 (defn stop-components! []
   (swap! system #(component/stop %)))
 
@@ -33,11 +23,7 @@
   (stop-components!)
   (shutdown-agents))
 
-(defn ^:private system-for-env [environment systems]
-  (get systems environment (:base-system systems)))
-
-(defn bootstrap! [systems-map environment]
-  (let [system-map ((system-for-env environment systems-map))]
-    (->> system-map
-         component/start
-         (reset! system))))
+(defn bootstrap! [systems-map]
+  (->> systems-map
+       component/start
+       (reset! system)))
