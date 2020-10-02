@@ -7,6 +7,7 @@
             [hero-project.components.servlet :as servlet]
             [hero-project.components.storage :as storage]
             [hero-project.service :as service-impl]
+            [hero-project.components.mocks.mock-servlet :as mock-servlet]
             [schema.core :as s]))
 
 (def base-config-map {:environment  :prod
@@ -29,9 +30,17 @@
          (component/system-map
           :config (config/new-config local-config-map))))
 
+(defn test-system []
+  (merge (base)
+         (component/system-map
+          :config             (config/new-config local-config-map)
+          :servlet            (component/using (mock-servlet/new-servlet) [:service])
+          :service            (component/using (service/new-service) [:config :routes :storage]))))
+
 (def systems-map
   {:base-system base
-   :local-system local})
+   :local-system local
+   :test-system test-system})
 
 (defn create-and-start-system!
   ([] (create-and-start-system! :base-system))
