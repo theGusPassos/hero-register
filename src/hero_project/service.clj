@@ -8,12 +8,9 @@
   [_]
   (ring-resp/response {:game-title "hero project"}))
 
-(defn heroes [{{:keys [customer-id]} :edn-params
-               {:keys [storage]} :components}]
-  (println "t2->" storage)
+(defn heroes [{{:keys [storage]} :components}]
   (ring-resp/response
-   ;;(controller/heroes)
-   []))
+   (controller/heroes storage)))
 
 (def common-interceptors
   [(body-params/body-params)
