@@ -29,19 +29,15 @@
 (defn dev-init [service-map]
   (-> service-map
       (merge {:env                        :dev
-              ;; do not block thread that starts web server
               ::bootstrap/join?           false
-              ;; Content Security Policy (CSP) is mostly turned off in dev mode
               ::bootstrap/secure-headers {:content-security-policy-settings {:object-src "none"}}
-              ;; all origins are allowed in dev mode
               ::bootstrap/allowed-origins {:creds true :allowed-origins (constantly true)}})
-      ;; Wire up interceptor chains
       bootstrap/default-interceptors
       bootstrap/dev-interceptors))
 
 (defn runnable-service [config routes service]
   (let [env          (:environment config)
-        port         (:dev-port config)
+        port         (:port config)
         service-conf (base-service routes port)]
     (-> (if (= :prod env)
           (prod-init service-conf)

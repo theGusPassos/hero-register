@@ -9,11 +9,11 @@
             [hero-project.service :as service-impl]
             [schema.core :as s]))
 
-(def base-config-map {:environment :prod
-                      :dev-port    8080})
+(def base-config-map {:environment  :prod
+                      :port         8080})
 
 (def local-config-map {:environment :dev-port
-                       :dev-port   8080})
+                       :port        8080})
 
 (defn base []
   (component/system-map
