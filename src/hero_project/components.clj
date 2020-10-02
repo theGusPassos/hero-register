@@ -43,5 +43,3 @@
       (create-and-start-system! env)))
 
 (defn stop-system! [] (system-utils/stop-components!))
-
-(stop-system!)

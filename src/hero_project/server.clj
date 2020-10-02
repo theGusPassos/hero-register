@@ -12,5 +12,3 @@
   [& args]
   (println "\n Creating your server...")
   (components/create-and-start-system! :base-system))
-
-(run-dev)
