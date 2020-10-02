@@ -1,11 +1,9 @@
 (ns hero-project.hero-adapter
   (:require [schema.core :as s :include-macros true]))
 
-(def HeroCreation
-  "Hero creation data type"
-  {:name s/Str})
+(defn str->uuid [id-str]
+  (read-string (str "#uuid \"" id-str "\"")))
 
-(defn to-hero
-  [create-hero-params]
-  (s/validate HeroCreation create-hero-params)
-  create-hero-params)
+(defn hero->hero-view
+  [hero]
+  (assoc hero :id (str (:id hero))))

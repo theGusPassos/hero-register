@@ -19,7 +19,7 @@
   [{{:keys [name]} :json-params
     {:keys [storage]} :components}]
   (let [hero-created (controller/create-hero! name storage)]
-    (ring-resp/response hero-created)))
+    (ring-resp/response (hero-adapter/hero->hero-view hero-created))))
 
 (def common-interceptors
   [(body-params/body-params)
