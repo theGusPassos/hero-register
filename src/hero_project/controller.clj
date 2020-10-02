@@ -1,7 +1,6 @@
 (ns hero-project.controller
   (:require [hero-project.db.saving-hero :as db.saving-hero]
-            [hero-project.services.hero-service :as service]
-            [hero-project.hero-adapter :as adapter]))
+            [hero-project.services.hero-service :as service]))
 
 (defn heroes [storage]
   (->> storage
