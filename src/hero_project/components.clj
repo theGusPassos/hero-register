@@ -12,13 +12,13 @@
                       :dev-port    8080})
 
 (def local-config-map {:environment :dev-port
-                       :dev-port   8080})
+                       :dev-port   8081})
 
 (defn base []
   (component/system-map
    :config (config/new-config base-config-map)
-   :routes (routes/new-routes #'service-impl/routes)
    :storage (storage/new-in-memory)
+   :routes (routes/new-routes #'service-impl/routes)
    :service (component/using (service/new-service) [:config :routes :storage])
    :servlet (component/using (servlet/new-servlet) [:service])))
 

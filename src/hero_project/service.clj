@@ -7,10 +7,12 @@
 (defn home-page [_]
   (ring-resp/response {:game-title "hero project"}))
 
-(defn heroes
-  [{{:keys [storage]} :components}]
+(defn heroes [{{:keys [customer-id]} :path-params
+               {:keys [storage]} :components}]
+  (println "t2->" storage)
   (ring-resp/response
-   (controller/heroes storage)))
+   ;;(controller/heroes)
+   []))
 
 (def common-interceptors
   [(body-params/body-params)
@@ -19,3 +21,5 @@
 (def routes
   #{["/" :get (conj common-interceptors `home-page)]
     ["/heroes/" :get (conj common-interceptors `heroes)]})
+
+(req!)

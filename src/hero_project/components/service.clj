@@ -46,4 +46,7 @@
 
   Object (toString [_] "<Service>"))
 
+(defmethod print-method Service [v ^java.io.Writer w]
+  (.write w "<Service>"))
+
 (defn new-service [] (map->Service {}))

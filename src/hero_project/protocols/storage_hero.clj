@@ -1,8 +1,10 @@
-(ns hero-project.protocols.storage-hero)
+(ns hero-project.protocols.storage-hero
+  (:require [schema.core :as s]))
 
 (defprotocol StorageHero
-  (read-all          [storage])
-  (put!              [storage update-fn])
-  (clear-all!        [storage]))
+  "Protocol for simple storage mechanism; simple but not practical in any way"
+  (read-all   [storage]           "Return the entire contents of storage")
+  (put!       [storage update-fn] "Mutate the storage with the provided function")
+  (clear-all! [storage]           "Clear the storage"))
 
-(def IStorageClient StorageHero)
+(def IStorageClient (s/protocol StorageHero))

@@ -7,6 +7,7 @@
   (start [this]
     (assoc this :instance (-> service
                               :runnable-service
+                              (assoc ::bootstrap/join? false)
                               (bootstrap/create-server)
                               (bootstrap/start))))
   (stop [this]

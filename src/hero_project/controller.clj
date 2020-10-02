@@ -3,4 +3,5 @@
 
 (defn heroes [storage]
   (->> storage
-       db.saving-hero/heroes))
+       db.saving-hero/heroes
+       vals))
