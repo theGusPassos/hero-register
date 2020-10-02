@@ -16,10 +16,9 @@
    (controller/heroes storage)))
 
 (defn create-hero
-  [{:keys [params]}]
-  (println params)
-  (hero-adapter/to-hero params)
-  (ring-resp/response {:hero 1}))
+  [{{:keys [name]} :json-params
+    {:keys [storage]} :components}]
+  (ring-resp/response {:hero name}))
 
 (def common-interceptors
   [(body-params/body-params)
