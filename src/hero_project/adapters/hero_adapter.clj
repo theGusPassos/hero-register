@@ -1,4 +1,4 @@
-(ns hero-project.hero-adapter
+(ns hero-project.adapters.hero-adapter
   (:require [schema.core :as s :include-macros true]))
 
 (defn str->uuid [id-str]

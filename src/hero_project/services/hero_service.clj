@@ -1,7 +1,7 @@
 (ns hero-project.services.hero-service
   (:require [ring.util.response :as ring-resp]
             [hero-project.controllers.hero-controller :as controller]
-            [hero-project.hero-adapter :as adapter]))
+            [hero-project.adapters.hero-adapter :as adapter]))
 
 (defn home-page
   [_]

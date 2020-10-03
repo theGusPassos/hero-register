@@ -1,4 +1,4 @@
-(ns hero-project.dev-servlet
+(ns hero-project.components.dev-servlet
   (:require [com.stuartsierra.component :as component]
             [io.pedestal.http :as bootstrap]))
 
@@ -14,8 +14,6 @@
                               bootstrap/start)))
   (stop [this]
     (bootstrap/stop (:instance this))
-    (dissoc this :instance)
-
-    Object (toString [_] "<DevServlet>")))
+    (dissoc this :instance)))
 
 (defn new-servlet [] (map->DevServlet {}))
