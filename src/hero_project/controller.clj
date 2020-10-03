@@ -12,3 +12,7 @@
   (let [hero (service/new-hero name)]
     (db.saving-hero/add-hero! hero storage)
     hero))
+
+(defn get-hero
+  [hero-id storage]
+  (db.saving-hero/hero hero-id storage))

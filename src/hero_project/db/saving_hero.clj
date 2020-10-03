@@ -7,3 +7,6 @@
 
 (defn heroes [storage]
   (storage-hero/read-all storage))
+
+(defn hero [hero-id storage]
+  (get (storage-hero/read-all storage) hero-id))

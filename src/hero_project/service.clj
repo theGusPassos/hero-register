@@ -4,8 +4,7 @@
             [io.pedestal.http.body-params :as body-params]
             [hero-project.controller :as controller]
             [hero-project.hero-adapter :as hero-adapter]
-            [hero-project.interceptors.error-handler :as error-handler]
-            [clojure.data.json :as json]))
+            [hero-project.interceptors.error-handler :as error-handler]))
 
 (defn home-page
   [_]
@@ -14,13 +13,26 @@
 (defn heroes
   [{{:keys [storage]} :components}]
   (let [heroes (controller/heroes storage)]
-    (ring-resp/response (hero-adapter/heroes->hero-view heroes))))
+    (->>  heroes
+          hero-adapter/heroes->hero-view
+          ring-resp/response)))
 
 (defn create-hero
   [{{:keys [name]} :json-params
     {:keys [storage]} :components}]
   (let [hero-created (controller/create-hero! name storage)]
-    (ring-resp/response (hero-adapter/hero->hero-view hero-created))))
+    (->> hero-created
+         hero-adapter/hero->hero-view
+         ring-resp/response)))
+
+(defn get-hero
+  [{{:keys [hero-id]} :path-params
+    {:keys [storage]} :components}]
+  (if-let [hero (controller/get-hero (hero-adapter/str->uuid hero-id) storage)]
+    (->> hero
+         hero-adapter/hero->hero-view
+         ring-resp/response)
+    (ring-resp/not-found {})))
 
 (def common-interceptors
   [(body-params/body-params)
@@ -30,4 +42,5 @@
 (def routes
   #{["/" :get (conj common-interceptors `home-page)]
     ["/heroes/" :get (conj common-interceptors `heroes)]
-    ["/hero/" :post (conj common-interceptors `create-hero)]})
+    ["/hero/" :post (conj common-interceptors `create-hero)]
+    ["/hero/:hero-id" :get (conj common-interceptors `get-hero)]})
