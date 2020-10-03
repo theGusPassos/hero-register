@@ -1,6 +1,6 @@
-(ns hero-project.controller
+(ns hero-project.controllers.hero-controller
   (:require [hero-project.db.saving-hero :as db.saving-hero]
-            [hero-project.services.hero-service :as service]))
+            [hero-project.services.hero-logic :as logic]))
 
 (defn heroes [storage]
   (->> storage
@@ -9,7 +9,7 @@
 
 (defn create-hero!
   [name storage]
-  (let [hero (service/new-hero name)]
+  (let [hero (logic/new-hero name)]
     (db.saving-hero/add-hero! hero storage)
     hero))
 

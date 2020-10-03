@@ -1,4 +1,4 @@
-(ns hero-project.services.hero-service
+(ns hero-project.services.hero-logic
   (:import [java.util UUID]))
 
 (defn new-hero
