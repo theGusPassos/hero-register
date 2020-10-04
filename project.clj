@@ -16,5 +16,5 @@
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}
-             :dev {:aliases {"run-dev" ["trampoline" "run" "-m" "basic-microservice-example.server/run-dev"]}
+             :dev {:aliases {"run-dev" ["trampoline" "run" "-m" "hero-project.server/run-dev"]}
                    :dependencies [[midje "1.9.1"]]}})
