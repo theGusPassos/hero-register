@@ -4,6 +4,13 @@
 
 A simple API made with clojure to create and query heroes.
 
+## built with
+
+- using [nubank's basic micro service example](https://github.com/nubank/basic-microservice-example)
+- [stuartsierra's component](https://github.com/stuartsierra/component)
+- [pedestal](http://pedestal.io/)
+- [midje](https://github.com/marick/Midje)
+
 ## Prerequisites
 
 - [jdk](https://www.oracle.com/technetwork/pt/java/javase/downloads/index.html) >= 1.8
