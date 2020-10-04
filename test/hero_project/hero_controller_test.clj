@@ -1,4 +1,4 @@
-(ns hero-project.controllers.hero-controller-test
+(ns hero-project.hero-controller-test
   (:require [midje.sweet :refer :all]
             [hero-project.controllers.hero-controller :as controller]
             [hero-project.db.saving-hero :as saving-hero]
