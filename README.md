@@ -1,3 +1,4 @@
+
 # Hero Project
 
 A simple API made with clojure to create and query heroes.
@@ -25,12 +26,17 @@ A simple API made with clojure to create and query heroes.
 2. run the .jar file with java -jar {file_path}
 
 ## Available endpoints
+- to ensure the api is running 
+`curl -G localhost:8080`
 
-- ensure the api is running
-  `curl -G localhost:8080`
-- create a new hero with `curl -H "Content-Type: application/json" -X POST localhost:8080/hero/ -d "{\"Name\":\"hero's name\"}"`
-- query the created hero with `curl -G localhost:8080/hero/{hero_id}`
-- get all created heroes with `curl -G localhost:8080/heroes/`
+- create a new hero with: 
+`curl -H "Content-Type: application/json" -X POST localhost:8080/hero/ -d "{\"Name\":\"hero's name\"}"`
+
+- query the created hero using the returned id:
+`curl -G localhost:8080/hero/{hero_id}`
+
+- get all heroes:
+ `curl -G localhost:8080/heroes/`
 
 ## Contributing
 
