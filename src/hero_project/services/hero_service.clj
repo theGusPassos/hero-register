@@ -17,7 +17,6 @@
 (defn create-hero
   [{{:keys [name]} :json-params
     {:keys [storage]} :components}]
-  (println name)
   (let [hero-created (controller/create-hero! name storage)]
     (->> hero-created
          adapter/hero->hero-view
