@@ -26,7 +26,7 @@ A simple API made with clojure to create and query heroes.
 2. run the .jar file with java -jar {file_path}
 
 ## Available endpoints
-- to ensure the api is running 
+- to ensure the api is running: 
 `curl -G localhost:8080`
 
 - create a new hero with: 
