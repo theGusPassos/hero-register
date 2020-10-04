@@ -1,4 +1,4 @@
-(ns hero-project.logic.hero-logic-test
+(ns hero-project.hero-logic-test
   (:require [midje.sweet :refer :all]
             [hero-project.logic.hero-logic :as logic]
             [clojure.test.check.generators :as gen]))
