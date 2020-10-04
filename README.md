@@ -1,44 +1,46 @@
-# hero-project
+# Hero Project
 
-FIXME: description
+A simple API made with clojure to create and query heroes.
 
-## Installation
+## Prerequisites
 
-Download from http://example.com/FIXME.
+- [jdk](https://www.oracle.com/technetwork/pt/java/javase/downloads/index.html) >= 1.8
+- [leiningen](https://leiningen.org/) >= 2.9.x
 
-## Usage
+## Getting Started
 
-FIXME: explanation
+### Running through REPL for development
 
-    $ java -jar hero-project-0.1.0-standalone.jar [args]
+1. start a new REPL `lein repl`
+2. use the [user.clj](\dev\user.clj) `go` function to start the server
 
-## Options
+### Running server
 
-FIXME: listing of options this app accepts.
+1. `lein run` or for a dev server: `lein run-dev`
+2. go to [localhost:8080](localhost:8080)
 
-## Examples
+### Compiling and Running
 
-...
+1. `lein uberjar` will compile the code into a .jar file in `/target/uberjar/`
+2. run the .jar file with java -jar {file_path}
 
-### Bugs
+## Available endpoints
 
-...
+- ensure the api is running
+  `curl -G localhost:8080`
+- create a new hero with `curl -H "Content-Type: application/json" -X POST localhost:8080/hero/ -d "{\"Name\":\"hero's name\"}"`
+- query the created hero with `curl -G localhost:8080/hero/{hero_id}`
+- get all created heroes with `curl -G localhost:8080/heroes/`
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+## Contributing
+
+1. Fork it
+2. Create your feature branch
+3. Push to the branch
+4. Create a new pull request
 
 ## License
 
-Copyright © 2020 FIXME
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+- **[Apache License](http://www.apache.org/licenses/)**
