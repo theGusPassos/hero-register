@@ -29,7 +29,7 @@
 
 (defn output-stream->data [output]
   (if (string? output)
-    (serialization/read-edn output)
+    (serialization/read-json output)
     output))
 
 (defn- print-last-interceptor-error [status]

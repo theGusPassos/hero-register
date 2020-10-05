@@ -18,8 +18,7 @@
   (let [url         "/hero/"
         resp-body   (-> url
                         (POST {:name hero-name} 200)
-                        :body
-                        serialization/read-json)]
+                        :body)]
     (assoc world
            :created-hero    resp-body
            :hero-id         (-> resp-body :id))))
@@ -28,8 +27,7 @@
   [{:keys [hero-id] :as world}]
   (let [url         (str "/hero/" hero-id)
         resp-body   (-> (GET url 200)
-                        :body
-                        serialization/read-json)]
+                        :body)]
     (assoc world
            :hero-id-retrieved (-> resp-body :id))))
 

@@ -39,10 +39,3 @@
   (-> data
       underscore->dash
       (parse-string true)))
-
-(s/defn read-edn [v :- s/Str]
-  (if (string? v) (edn/read-string {:readers *data-readers*} v) v))
-
-(s/defn write-edn :- s/Str
-  [v :- (s/pred coll?)]
-  (pr-str v))
