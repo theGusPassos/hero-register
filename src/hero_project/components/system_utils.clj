@@ -10,6 +10,16 @@
     (catch ExceptionInfo ex
       (throw (or (.getCause ex) ex)))))
 
+(defn get-component [component-name]
+  (some-> system deref (get component-name)))
+
+(defn get-component! [c]
+  (or (get-component c)
+      (throw (ex-info "Component not found"
+                      {:from      ::get-component!
+                       :component c
+                       :reason    "Unknown component"}))))
+
 (defn start-system! []
   (swap! system quiet-start))
 
