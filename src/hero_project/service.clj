@@ -10,11 +10,11 @@
              [helpers :refer [before defbefore defhandler handler]]]
             [schema.core :as s]))
 
-;; (defn home-page
-;;   [_]
-;;   (->> {:title "hero register"}
-;;        json/write-str
-;;        ring-resp/response))
+(defn home-page
+  [{{:keys [storage]} :components}]
+  (println storage)
+  (->> {:title "hero register"}
+       ring-resp/response))
 
 ;; (def common-interceptors
 ;;   [(body-params/body-params)
@@ -34,6 +34,14 @@
    :type s/Str
    :age s/Int})
 
+(def home
+  (handler
+   ::home
+   {:summary "returns home page"
+    :responses {200 {:body {:title s/Str}}}}
+   (fn [request]
+     (println "------------")
+     (home-page request))))
 
 (def create-pet
   "Example of using the handler helper"
@@ -71,7 +79,9 @@
                            (api/coerce-request)
                            (api/validate-response)]
        ["/pets" ^:interceptors [(api/doc {:tags ["pets"]})]
-        ["/" {:post create-pet}]]
+        ["/" {:post create-pet}]
+        ["/home" {:get home}]
+        ["/hero" {:post hero-service/create-hero-test}]]
        ["/swagger.json" {:get api/swagger-json}]
        ["/*resource" ^:interceptors [no-csp] {:get api/swagger-ui}]]]]))
 
