@@ -7,6 +7,7 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [prismatic/schema "1.1.7"]
                  [com.stuartsierra/component "0.4.0"]
+                 [pedestal-api "0.3.4" :exclusions [prismatic/schema]]
                  [io.pedestal/pedestal.service "0.5.3"]
                  [io.pedestal/pedestal.jetty "0.5.3"]
                  [http-kit "2.3.0"]

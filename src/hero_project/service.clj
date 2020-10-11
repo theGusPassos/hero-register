@@ -4,21 +4,75 @@
             [io.pedestal.http.body-params :as body-params]
             [hero-project.interceptors.error-handler :as error-handler]
             [ring.util.response :as ring-resp]
-            [clojure.data.json :as json]))
+            [clojure.data.json :as json]
+            [pedestal-api
+             [core :as api]
+             [helpers :refer [before defbefore defhandler handler]]]
+            [schema.core :as s]))
 
-(defn home-page
-  [_]
-  (->> {:title "hero register"}
-       json/write-str
-       ring-resp/response))
+;; (defn home-page
+;;   [_]
+;;   (->> {:title "hero register"}
+;;        json/write-str
+;;        ring-resp/response))
 
-(def common-interceptors
-  [(body-params/body-params)
-   http/html-body
-   error-handler/service-error-handler])
+;; (def common-interceptors
+;;   [(body-params/body-params)
+;;    http/html-body
+;;    error-handler/service-error-handler])
 
-(def routes
-  #{["/" :get (conj common-interceptors `home-page)]
-    ["/heroes/" :get (conj common-interceptors `hero-service/heroes)]
-    ["/hero/" :post (conj common-interceptors `hero-service/create-hero)]
-    ["/hero/:hero-id" :get (conj common-interceptors `hero-service/get-hero)]})
+;; (def routes
+;;   #{["/" :get (conj common-interceptors `home-page)]
+;;     ["/heroes/" :get (conj common-interceptors `hero-service/heroes)]
+;;     ["/hero/" :post (conj common-interceptors `hero-service/create-hero)]
+;;     ["/hero/:hero-id" :get (conj common-interceptors `hero-service/get-hero)]})
+;;     
+(defonce the-pets (atom {}))
+
+(s/defschema Pet
+  {:name s/Str
+   :type s/Str
+   :age s/Int})
+
+
+(def create-pet
+  "Example of using the handler helper"
+  (handler
+   ::create-pet
+   {:summary     "Create a pet"
+    :parameters  {:body-params Pet}
+    :responses   {201 {:body {:id s/Int}}}}
+   (fn [request]
+     (let [id (inc (count @the-pets))]
+       (swap! the-pets assoc id (assoc (:body-params request) :id id))
+       {:status 201
+        :body {:id id}}))))
+
+(def no-csp
+  {:name ::no-csp
+   :leave (fn [ctx]
+            (assoc-in ctx [:response :headers "Content-Security-Policy"] ""))})
+
+(s/with-fn-validation
+  (api/defroutes routes
+    {:info {:title       "Swagger Sample App built using pedestal-api"
+            :description "Find out more at https://github.com/oliyh/pedestal-api"
+            :version     "2.0"}
+     :tags [{:name         "pets"
+             :description  "Everything about your Pets"
+             :externalDocs {:description "Find out more"
+                            :url         "http://swagger.io"}}
+            {:name        "orders"
+             :description "Operations about orders"}]}
+    [[["/" ^:interceptors [api/error-responses
+                           (api/negotiate-response)
+                           (api/body-params)
+                           api/common-body
+                           (api/coerce-request)
+                           (api/validate-response)]
+       ["/pets" ^:interceptors [(api/doc {:tags ["pets"]})]
+        ["/" {:post create-pet}]]
+       ["/swagger.json" {:get api/swagger-json}]
+       ["/*resource" ^:interceptors [no-csp] {:get api/swagger-ui}]]]]))
+
+(def deref-routes #(deref #'routes))

@@ -17,8 +17,8 @@
 
 (defn base-service [routes port]
   {:env                        :prod
-   ::bootstrap/router          :prefix-tree
-   ::bootstrap/routes          #(route/expand-routes (deref routes))
+   ::bootstrap/router          :linear-search
+   ::bootstrap/routes          #(deref routes)
    ::bootstrap/resource-path   "/public"
    ::bootstrap/type            :jetty
    ::bootstrap/port            port})
