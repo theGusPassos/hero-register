@@ -10,52 +10,6 @@
              [helpers :refer [before defbefore defhandler handler]]]
             [schema.core :as s]))
 
-(defn home-page
-  [{{:keys [storage]} :components}]
-  (println storage)
-  (->> {:title "hero register"}
-       ring-resp/response))
-
-;; (def common-interceptors
-;;   [(body-params/body-params)
-;;    http/html-body
-;;    error-handler/service-error-handler])
-
-;; (def routes
-;;   #{["/" :get (conj common-interceptors `home-page)]
-;;     ["/heroes/" :get (conj common-interceptors `hero-service/heroes)]
-;;     ["/hero/" :post (conj common-interceptors `hero-service/create-hero)]
-;;     ["/hero/:hero-id" :get (conj common-interceptors `hero-service/get-hero)]})
-;;     
-(defonce the-pets (atom {}))
-
-(s/defschema Pet
-  {:name s/Str
-   :type s/Str
-   :age s/Int})
-
-(def home
-  (handler
-   ::home
-   {:summary "returns home page"
-    :responses {200 {:body {:title s/Str}}}}
-   (fn [request]
-     (println "------------")
-     (home-page request))))
-
-(def create-pet
-  "Example of using the handler helper"
-  (handler
-   ::create-pet
-   {:summary     "Create a pet"
-    :parameters  {:body-params Pet}
-    :responses   {201 {:body {:id s/Int}}}}
-   (fn [request]
-     (let [id (inc (count @the-pets))]
-       (swap! the-pets assoc id (assoc (:body-params request) :id id))
-       {:status 201
-        :body {:id id}}))))
-
 (def no-csp
   {:name ::no-csp
    :leave (fn [ctx]
@@ -77,12 +31,11 @@
                            (api/body-params)
                            api/common-body
                            (api/coerce-request)
+                           error-handler/service-error-handler
                            (api/validate-response)]
-       ["/pets" ^:interceptors [(api/doc {:tags ["pets"]})]
-        ["/" {:post create-pet}]
-        ["/home" {:get home}]
-        ["/hero" {:post hero-service/create-hero-test}]]
+       ["/heroes" ^:interceptors [(api/doc {:tags ["heroes"]})]
+        ["/" {:get hero-service/heroes-spec
+              :post hero-service/create-hero-spec}]
+        ["/:id" {:get hero-service/get-hero-spec}]]
        ["/swagger.json" {:get api/swagger-json}]
        ["/*resource" ^:interceptors [no-csp] {:get api/swagger-ui}]]]]))
-
-(def deref-routes #(deref #'routes))

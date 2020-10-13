@@ -23,6 +23,3 @@
   []
   (init)
   (start))
-(go)
-
-(components/stop-system!)
