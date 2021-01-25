@@ -36,6 +36,6 @@
        ["/heroes" ^:interceptors [(api/doc {:tags ["heroes"]})]
         ["/" {:get hero-service/heroes-spec
               :post hero-service/create-hero-spec}]
-        ["/:id" {:get hero-service/get-hero-spec}]]
+        ["/:hero-id" {:get hero-service/get-hero-spec}]]
        ["/swagger.json" {:get api/swagger-json}]
        ["/*resource" ^:interceptors [no-csp] {:get api/swagger-ui}]]]]))
