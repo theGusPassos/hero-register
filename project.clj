@@ -19,4 +19,5 @@
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}
              :dev {:aliases {"run-dev" ["trampoline" "run" "-m" "hero-project.server/run-dev"]}
                    :dependencies [[midje "1.9.1"]
-                                  [nubank/selvage "0.0.1"]]}})
+                                  [nubank/selvage "0.0.1"]
+                                  [org.clojure/test.check "0.10.0"]]}})
